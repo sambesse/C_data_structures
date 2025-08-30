@@ -32,7 +32,7 @@ int append(vec_t *vec, void *data) {
 int pop(vec_t *vec, void *elem) {
     if (vec->size == 0)
         return -1;
-    memcpy((char *)vec->data + (vec->size-1) * vec->elem_size, elem, vec->elem_size);
+    memcpy(elem, (char *)vec->data + (vec->size-1) * vec->elem_size, vec->elem_size);
     vec->size--;
     return 0;
 }

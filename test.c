@@ -26,6 +26,7 @@ int main(int argc, char **argv) {
     #if VECTOR_TEST
     vec_t int_vec;
     int x = 10;
+    int ret;
     vec_init(&int_vec, sizeof(int), 10, 20);
     append(&int_vec, &x);
     x = 5;
@@ -36,6 +37,60 @@ int main(int argc, char **argv) {
     append(&int_vec, &x);
     x = -80;
     append(&int_vec, &x);
+    print_int_vec(&int_vec);
+    x = 95;
+    set(&int_vec, 2, &x);
+    print_int_vec(&int_vec);
+    ret = pop(&int_vec, &x);
+    if (ret < 0) {
+        printf("nothing to pop\n");
+    } else {
+        printf("popped: %d\n", x);
+    }
+    ret = pop(&int_vec, &x);
+    if (ret < 0) {
+        printf("nothing to pop\n");
+    } else {
+        printf("popped: %d\n", x);
+    }
+    ret = pop(&int_vec, &x);
+    if (ret < 0) {
+        printf("nothing to pop\n");
+    } else {
+        printf("popped: %d\n", x);
+    }
+    ret = pop(&int_vec, &x);
+    if (ret < 0) {
+        printf("nothing to pop\n");
+    } else {
+        printf("popped: %d\n", x);
+    }
+    ret = pop(&int_vec, &x);
+    if (ret < 0) {
+        printf("nothing to pop\n");
+    } else {
+        printf("popped: %d\n", x);
+    }
+    ret = pop(&int_vec, &x);
+    if (ret < 0) {
+        printf("nothing to pop\n");
+    } else {
+        printf("popped: %d\n", x);
+    }
+    ret = pop(&int_vec, &x);
+    if (ret < 0) {
+        printf("nothing to pop\n");
+    } else {
+        printf("popped: %d\n", x);
+    }
+    ret = set(&int_vec, 20, &x);
+    if (ret < 0) {
+        printf("failed to set\n");
+    }
+    ret = get(&int_vec, 0, &x);
+    if (ret < 0) {
+        printf("failed to get\n");
+    }
     print_int_vec(&int_vec);
     #endif
 }
